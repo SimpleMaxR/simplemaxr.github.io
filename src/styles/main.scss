@@ -1,0 +1,69 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap";
+@import "mixins.scss";
+
+html {
+  scroll-behavior: smooth;
+
+  --bg: #ffffff;
+  --accent: #eadce9;
+  --shadow: #00000016;
+  --tech-bg: #0000000a;
+  --about-bg: #eadce930;
+  --title-solid: #000000;
+  --text-primary: #5e5e5e;
+  --title-profession: #b889cf;
+  --title-secondary: #00000060;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    &-thumb { background: var(--text-primary) }
+  }
+
+  * {
+    margin: 0; border: 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    font: 20px "Inter", sans-serif; font-weight: 500;
+    &::selection { background: var(--tech-bg) }
+  }
+}
+
+body { overflow-x: hidden; background: var(--bg) }
+section { margin: auto; max-width: 800px }
+
+h1 { color: var(--title-solid) }
+svg {
+  width: 32px;
+  path, circle { fill: currentColor }
+}
+
+.button {
+  cursor: pointer;
+  padding: 10px 24px;
+  border-radius: 36px;
+  background: var(--bg);
+  transition: 0.15s opacity;
+  box-shadow: 0 4px 8px var(--shadow);
+  color: var(--title-solid); font-weight: 600 !important; font-size: 18px;
+  &:hover { opacity: 0.75 !important }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --bg: #18181b;
+    --accent: #0d0d0f;
+    --tech-bg: #e8eaff09;
+    --about-bg: #0f0f1170;
+    --title-solid: #ffffff;
+    --text-primary: #ffffffa0;
+    --title-secondary: #ffffffc0;
+  }
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  h1 {
+    color: transparent;
+    background-clip: text; -webkit-background-clip: text !important;
+    background: linear-gradient(var(--title-solid), var(--title-secondary));
+  }
+}
