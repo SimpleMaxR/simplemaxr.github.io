@@ -56,11 +56,11 @@ const techs: Tech[] = [
 
 const works: Work[] = [
   {
-    link: "www.google.com",
+    link: "",
     name: "华工小灯神",
     role: "前端页面开发",
     desc: "基于 uniapp 框架开发的 H5 端讨论社区，具备登陆、留言等交互功能"
-  },
+  }
 
 ]
 </script>
@@ -73,7 +73,7 @@ const works: Work[] = [
         <aside class="links">
           <a href="#about">关于</a>
           <a
-            href="hugoho912@outlook.com"
+            href="mailto:hugoho912@outlook.com"
             class="button"
             target="_blank"
             rel="noreferrer noopener"
@@ -177,7 +177,7 @@ const works: Work[] = [
               :href="`https://${work.link}`"
               target="_blank"
               rel="noreferrer noopener"
-              class="work">
+              class="work" @click.prevent="alert('还没写好呢～')">
               <img
                 :src="`/projects/${work.name
                   .toLowerCase()
