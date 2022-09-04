@@ -6,10 +6,8 @@ import Animated from "@/components/Animated.vue"
 import Vue from "@/icons/vue.svg?component"
 import Sass from "@/icons/sass.svg?component"
 import CPP from "@/icons/cpp.svg?component"
-import About from "@/icons/about.svg?component"
 import Works from "@/icons/works.svg?component"
 import GitHub from "@/icons/github.svg?component"
-import Twitter from "@/icons/twitter.svg?component"
 import Cnblog from "@/icons/cnblog.svg?component"
 import HTML from "@/icons/html.svg?component"
 
@@ -57,9 +55,9 @@ const techs: Tech[] = [
 const works: Work[] = [
   {
     link: "",
-    name: "华工小灯神",
-    role: "前端页面开发",
-    desc: "基于 uniapp 框架开发的 H5 端讨论社区，具备登陆、留言等交互功能"
+    name: "Genie",
+    role: "front-end develop",
+    desc: "A web-based forum for students to discuss and share their ideas. Build with uni-app framework, sass and etc."
   }
 
 ]
@@ -69,15 +67,15 @@ const works: Work[] = [
   <main>
     <header>
       <section>
-        <h1>何家豪</h1>
+        <h1>Hugo Ho</h1>
         <aside class="links">
-          <a href="#about">关于</a>
+          <a href="#about">About</a>
           <a
             href="mailto:hugoho912@outlook.com"
             class="button"
             target="_blank"
             rel="noreferrer noopener"
-            >联络</a
+          >Contact</a
           >
         </aside>
       </section>
@@ -85,13 +83,12 @@ const works: Work[] = [
 
     <figure class="wrapper wrapper-hero">
       <section id="hero" xyz="fade left-4 duration-8 stagger-1">
-        <Animated><h1>何家豪</h1></Animated>
-        <Animated><h2>软件工程在读学生</h2></Animated>
+        <Animated><h1>Hugo Ho</h1></Animated>
+        <Animated><h2>Front-end developer</h2></Animated>
         <Animated
-          ><p>
-            就读于华南理工大学，软件工程专业大二。
-          </p></Animated
-        >
+        ><p>
+          Sophomore in Software Engineering at South China University of Technology
+        </p></Animated>
 
         <aside
           class="accounts"
@@ -118,14 +115,15 @@ const works: Work[] = [
       <section id="about">
         <aside class="about" xyz="fade left-4 duration-8 stagger-0.5">
           <Animated
-            ><h1>掌握技能</h1
+          ><h1>Skills</h1
           ></Animated>
           <Animated
             ><p>
-              熟悉 C++ 语言的命令行程序开发。
-              <br /><br />
-              了解并熟练使用 HTML SCSS 和 Vue.js 框架以及 uniapp 框架开发前端项目
-            </p></Animated
+            Familiarity with command line program development in C++ language.
+            <br /><br />
+            Experience in front-end development using Vue.js and HTML/CSS. Familiarity building web-app by using uni-app
+            framework
+          </p></Animated
           >
         </aside>
 
@@ -148,9 +146,9 @@ const works: Work[] = [
       <section id="about">
         <aside class="about" xyz="fade left-4 duration-8 stagger-0.5">
           <Animated
-          ><h1>教育经历</h1
+          ><h1>Education experience</h1
           ></Animated>
-          <Animated><p>2021-2025  华南理工大学</p></Animated>
+          <Animated><p style="color: #0049a1">2021-2025 SCUT</p></Animated>
         </aside>
 
 <!--        <aside class="techs" xyz="fade down-4 duration-8 stagger-0.5">-->
@@ -170,14 +168,16 @@ const works: Work[] = [
 
     <figure class="wrapper wrapper-accent">
       <section id="works">
-        <h1>项目经历 <Works /></h1>
+        <h1>Projects
+          <Works />
+        </h1>
         <div xyz="fade down-4 duration-8 stagger-0.5">
           <Animated v-for="work in works">
             <a
               :href="`https://${work.link}`"
               target="_blank"
               rel="noreferrer noopener"
-              class="work" @click.prevent="alert('还没写好呢～')">
+              class="work" @click="">
               <img
                 :src="`/projects/${work.name
                   .toLowerCase()
